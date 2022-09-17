@@ -58,7 +58,7 @@ void loop() {
     lado_1();
   }
   else if (bluetooth == 13){
-    lado_2() {
+    lado_2();
   }
   
   // put your main code here, to run repeatedly:
