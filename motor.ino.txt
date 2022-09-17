@@ -1,0 +1,66 @@
+int ph = 13;
+int ph2 = 12;
+int ph3 = 11;
+int ph4 = 10;
+int bluetooth;
+
+// movimento do robo
+void frente_motor() {
+    digitalWrite(ph, HIGH);
+    digitalWrite(ph2, LOW);
+    digitalWrite(ph3, HIGH);
+    digitalWrite(ph4, LOW);
+}
+
+void tras_motor() {
+    digitalWrite(ph, LOW);
+    digitalWrite(ph2, HIGH);
+    digitalWrite(ph3, LOW);
+    digitalWrite(ph4, HIGH); 
+}
+
+void lado_1() {
+    digitalWrite(ph, LOW);
+    digitalWrite(ph2, HIGH);
+    digitalWrite(ph3, HIGH);
+    digitalWrite(ph4, HIGH);
+}
+
+void lado_2() {
+    digitalWrite(ph, HIGH);
+    digitalWrite(ph2, HIGH);
+    digitalWrite(ph3, LOW);
+    digitalWrite(ph4, HIGH); 
+}
+
+void setup() {
+  pinMode(ph, OUTPUT);
+  pinMode(ph2, OUTPUT);
+  pinMode(ph3, OUTPUT);
+  pinMode(ph4,OUTPUT);
+
+  Serial.begin(9600);
+  
+  // put your setup code here, to run once:
+
+}
+
+void loop() {
+  bluetooth = Serial.read();
+  
+  if (bluetooth == 10){
+   frente_motor();
+  }
+  else if (bluetooth == 11){
+   tras_motor();
+  }
+  else if (bluetooth == 12){
+    lado_1();
+  }
+  else if (bluetooth == 13){
+    lado_2() {
+  }
+  
+  // put your main code here, to run repeatedly:
+
+}
